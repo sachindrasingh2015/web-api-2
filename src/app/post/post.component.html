@@ -1,0 +1,36 @@
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+<table>
+  <tr>
+    <td>Name:</td>
+    <td>
+      <input formControlName="name">
+    </td>
+  </tr>
+  <tr>
+    <td>Designatiom:</td>
+    <td>
+      <input formControlName="Designation">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button [disabled]="!form.valid">submit</button>
+    </td>
+  </tr>
+  <tr><p *ngIf="datasaved" ngClass='success'>
+    submit successfully
+    </p></tr>
+</table>
+</form>
+<h3>view</h3>
+<table border="1">
+  <tr><th>Id</th><th>Name</th><th>Designation</th></tr>
+  <tr *ngFor="let item of allbooks|async">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.Designation}}</td>
+    <td><button type="button" (click)="booktoedit(item.id)">edit</button></td>
+    <td><button type="button" (click)="deletebook(item.id)">Delete</button></td>
+  </tr>
+</table>
