@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  display=true;
   ngOnInit(): void {
+  }
+  books=[
+    {name:'angular', price:100},
+    {name:'node', price:200},
+  ]
+  obj={
+    data:"hello everyone"
   }
 
 }

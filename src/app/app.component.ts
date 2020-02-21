@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'api-demo';
   softBook:Book[];
   // softBook:string; this is use for map & subscribe
-  constructor(private obj:BookService){}
+  constructor(private obj: BookService){}
 
   ngOnInit(){
     this.getsoftbooks();
@@ -25,4 +25,6 @@ export class AppComponent {
     //   }
     // )
   }
+
+  // input:string="Hello I am parent";
 }

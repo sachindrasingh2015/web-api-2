@@ -1,1 +1,57 @@
-<p>home works!</p>
+<!-- //this is ngif only -->
+<!-- <div *ngIf="display">
+Div selction
+</div>
+<ng-template [ngIf]="display">
+ng template tag
+</ng-template> -->
+
+<!-- //this is ngif and else -->
+<!-- <div *ngIf="display; else elseblock">
+  Div selction
+  </div>
+  <ng-template #elseblock>
+  <div>ng template tag</div>
+  </ng-template> -->
+
+<!-- this is ngFor condition
+  <div *ngFor="let book of books; let i=index">
+    {{i+1}}-{{book.name}}-{{book.price}}
+    </div><br>
+    <ng-template ngFor let-book [ngForOf]="books" let-i="index">
+    {{i+1}}-{{book.name}}.{{book.price}}
+    </ng-template> -->
+
+
+  <!-- <div [ngSwitch]="'Javascript'">
+      <p *ngSwitchCase="'Angular'">Angular course</p>
+      <p *ngSwitchCase="'Node'">Node course</p>
+      <p *ngSwitchDefault>HTML course</p>
+  </div>
+
+  <div [ngSwitch]="'Type Script'">
+    <ng-template [ngSwitchCase]="'Angular'">
+      <p>Angular course</p>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'Node'">
+      <p>Node Course</p>
+    </ng-template>
+  </div> -->
+
+
+  <ul>
+    <ng-container *ngFor="let book of books">
+      <li *ngIf="display">
+        {{book.name}}
+      </li>
+    </ng-container>
+  </ul>
+
+  <!-- this data came from ts file
+  <ng-container *ngTemplateOutlet="template; context:obj">
+  </ng-container>
+
+  <ng-template #template let-ob="data">
+    <!-- hello world -->
+    <!-- {{ob}}
+  </ng-template>  -->
