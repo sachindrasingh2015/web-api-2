@@ -10,22 +10,29 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './post/post.component';
+import { AdminComponent } from './admin/admin.component';
+import { ActivateGuard } from './activate.guard';
+import { HomeComponent } from './home/home.component';
+import { routes } from './routing';
+import { DeactivateGuard } from './deactivate.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(TestData)
   ],
-  providers: [BookService],
+  providers: [BookService,ActivateGuard,DeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

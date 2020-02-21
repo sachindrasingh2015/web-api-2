@@ -8,7 +8,9 @@ import { Book } from './book';
 })
 export class BookService {
   bookUrl='/api/books';
-
+  isAdminrights():boolean{
+    return false;
+  }
   constructor(private http:HttpClient) { }
 
   getbookbyid(bookid:string){

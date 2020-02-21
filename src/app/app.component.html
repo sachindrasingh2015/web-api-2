@@ -12,5 +12,15 @@
     Designation:{{item.Designation}}
   </li>
 </ul> -->
-<app-post></app-post>
+<!-- <app-post></app-post> -->
+<nav>
+  <ul>
+    <li>
+      <a [routerLink]="['home']">home</a><br>
+      <a [routerLink]="['admin']">admin</a><br>
+      <a [routerLink]="['post']">post</a>
+
+    </li>
+  </ul>
+</nav>
 <router-outlet></router-outlet>
